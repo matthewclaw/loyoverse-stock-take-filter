@@ -1,0 +1,52 @@
+{
+  "manifest_version": 2,
+  "name": "Loyverse filter",
+  "version": "1.0",
+
+  "description": "Just a filter for stock take",
+
+  "content_scripts": [
+    {
+      "matches": ["*://*.mozilla.org/*", "*://r.loyverse.com/*"],
+      "js": ["filter.js"]
+    }
+  ],
+  "content_security_policy": "default-src 'self'",
+  "commands": {
+    "_execute_browser_action": {},
+    "launch-element-picker": {
+      "description": "__MSG_popupTipPicker__"
+    },
+    "launch-element-zapper": {
+      "description": "__MSG_popupTipZapper__"
+    },
+    "launch-logger": {
+      "description": "__MSG_popupTipLog__"
+    },
+    "open-dashboard": {
+      "description": "__MSG_popupTipDashboard__"
+    },
+    "relax-blocking-mode": {
+      "description": "__MSG_relaxBlockingMode__"
+    },
+    "toggle-cosmetic-filtering": {
+      "description": "__MSG_toggleCosmeticFiltering__"
+    },
+    "toggle-javascript": {
+      "description": "__MSG_toggleJavascript__"
+    }
+  },
+  "permissions": [
+    "alarms",
+    "dns",
+    "menus",
+    "privacy",
+    "storage",
+    "tabs",
+    "unlimitedStorage",
+    "webNavigation",
+    "webRequest",
+    "webRequestBlocking",
+    "<all_urls>"
+  ]
+}
